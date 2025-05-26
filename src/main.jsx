@@ -1,15 +1,21 @@
-import { StrictMode } from "react";
-import { createRoot } from "react-dom/client";
+import * as React from "react";
+import * as ReactDOM from "react-dom/client";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import "./index.css";
-import { RouterProvider } from "react-router-dom";
-import { router } from "./Routers/Router.jsx";
-import { Provider } from "react-redux";
-import { store } from "./Stores/store.js";
+import Dashboard from "./Layouts/Dashboard";
+import Carousel from "./components/Carousel/Carousel";
+import AllCarousel from "./components/Carousel/AllCarousel";
 
-createRoot(document.getElementById("root")).render(
-  <StrictMode>
-    <Provider store={store}>
-      <RouterProvider router={router} />
-    </Provider>
-  </StrictMode>
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <Dashboard></Dashboard>,
+  },
+  { path: "carousel", element: <AllCarousel></AllCarousel> },
+]);
+
+ReactDOM.createRoot(document.getElementById("root")).render(
+  <React.StrictMode>
+    <RouterProvider router={router} />
+  </React.StrictMode>
 );
