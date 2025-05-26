@@ -9,50 +9,31 @@ import Carousel from "../components/Carousel/Carousel";
 import Button from "../components/Button/Button";
 
 export default function Dashboard() {
+  const components = [
+    { title: "Navbar", route: "/navbar" },
+    { title: "Chat Loader", route: "/chat-loader" },
+    { title: "Rounded Loader", route: "/rounded-loader" },
+    { title: "Custom Modal", route: "/custom-modal" },
+    { title: "Animated Modal", route: "/reset-password" },
+    { title: "Pagination", route: "/pagination" },
+    { title: "Carousel", route: "/carousel" },
+    { title: "Button", route: "/button" },
+  ];
   return (
     <>
-      <div className="">
-        {/* NAvbar */}
-        <div className="text-5xl text-center font-bold">
-          <h1>Navbar Section</h1>
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 p-6">
+        {components.map((component, idx) => (
+          <Link to={component.route} key={idx}>
+            <div className="bg-white hover:bg-pink-100 border rounded-xl shadow-lg p-6 text-center cursor-pointer transition-transform duration-300 hover:scale-105">
+              <h2 className="text-2xl font-bold text-gray-800">
+                {component.title}
+              </h2>
+            </div>
+          </Link>
+        ))}
+        <div className="col-span-full mt-8">
+          <Outlet />
         </div>
-        <h1 className="text-5xl text-center font-bold">Chat Loder</h1>
-        <Chatloader />
-        <h1 className="text-5xl text-center font-bold">Rounded Loder</h1>
-        <Loader />
-        <h1 className="text-5xl text-center font-bold">
-          Custom Modal Component
-        </h1>
-        <ModalComponent />
-        <h1 className="text-5xl text-center font-bold">
-          Animated Modal Component
-        </h1>
-        <Link to="/reset-password">
-          <button className="bg-pink-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded">
-            Animated set new password Modal
-          </button>
-        </Link>
-        <h1 className="text-5xl text-center font-bold">
-          Pagination Component with .......
-        </h1>
-        <p className="text-center">All Data show on console</p>
-        <Pagination />
-      </div>
-      <div>
-        <h1 className="text-5xl text-center font-bold">Carousel</h1>
-        <div>
-          <h1 className="text-2xl">Carousel - 1 </h1>
-          <Carousel></Carousel>
-        </div>
-      </div>
-      <div className="bg-gray-800 h-full p-4">
-        <h1 className="text-5xl text-center font-bold text-white">Button</h1>
-        <div>
-          <Button></Button>
-        </div>
-      </div>
-      <div>
-        <Outlet />
       </div>
     </>
   );

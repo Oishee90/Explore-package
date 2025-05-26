@@ -1,5 +1,5 @@
-import React from 'react';
-import { MdOutgoingMail } from 'react-icons/md'; // Ensure this import is added
+import React from "react";
+import { MdOutgoingMail } from "react-icons/md"; // Ensure this import is added
 
 const Button = () => {
   return (
@@ -17,4 +17,3 @@ const Button = () => {
 };
 
 export default Button;
-
