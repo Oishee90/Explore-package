@@ -97,15 +97,9 @@ const AllCarousel = () => {
               creativity.
             </p>
             <div className="flex justify-center space-x-4">
-              <button className="bg-white text-pink-600 font-semibold py-2 px-4 rounded-full hover:bg-pink-100 transition-all duration-300">
-                Docs
-              </button>
-              <button className="bg-white text-purple-600 font-semibold py-2 px-4 rounded-full hover:bg-purple-100 transition-all duration-300">
-                Components
-              </button>
-              <button className="bg-white text-indigo-600 font-semibold py-2 px-4 rounded-full hover:bg-indigo-100 transition-all duration-300">
-                Form
-              </button>
+              <div>
+                <Dock items={items} baseItemSize={50} magnification={70} />
+              </div>
             </div>
           </div>
         )}
@@ -113,12 +107,8 @@ const AllCarousel = () => {
       {isScrolled && (
         <>
           <div
-            className={`fixed top-0 left-0 w-full bg-gradient-to-r from-pink-500 to-purple-600 backdrop-blur-md py-4 flex justify-center space-x-4 shadow-xl z-50 transform
-    transition-all duration-[9000ms] delay-[3000ms] ease-[cubic-bezier(0.165,0.84,0.44,1)] ${
-      isScrolled
-        ? "translate-y-0 opacity-600 pointer-events-auto"
-        : "-translate-y-10 opacity-0 pointer-events-none"
-    }`}
+            className={`fixed top-0 left-0 w-full bg-none  flex justify-center space-x-4 z-50 transform
+    transition-all duration-[9000ms] delay-[3000ms] ease-[cubic-bezier(0.165,0.84,0.44,1)]`}
           >
             <div>
               <Dock items={items} baseItemSize={50} magnification={70} />

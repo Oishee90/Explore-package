@@ -1,45 +1,48 @@
 .dock-outer {
   position: relative;
-  height: 60px; /* Fixed height, adjust as needed */
+  height: 80px; /* Fixed height, adjust as needed */
   overflow: visible;
   display: flex;
   justify-content: center;
   align-items: flex-end;
   pointer-events: none;
 }
-
 .dock-panel {
   position: absolute;
   bottom: 0;
-  background-color: transparent;
+  background: linear-gradient(to right, #c451db, #8e44ad);
   padding: 10px 20px;
-  border-radius: 16px;
+  border-radius: 24px;
   display: flex;
+  align-items: flex-end; /* ✅ Important: stop moving upward */
   gap: 10px;
   overflow: visible;
   pointer-events: all;
   z-index: 10;
 }
 
+
 .dock-item {
   transform-origin: bottom center;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: flex-end;
+  align-items: flex-end;
+  justify-content: center;
   cursor: pointer;
   user-select: none;
-  height: 35px !important;
+  height: 45px !important;
   width: 100px !important;
   font-size: 24px;
+  overflow: visible;
 }
 
 .dock-icon {
   display: flex;
   align-items: center;
   justify-content: center;
-  border: 2px solid pink;
-  padding: 4px;
+  color:antiquewhite;
+  background: linear-gradient(to right, #c03ec2, #c03ec2);
+  padding: 9px;
 }
 .dock-icon svg {
 font-size:32px;
@@ -54,4 +57,5 @@ height:28px;
   background-color: #222;
   padding: 2px 6px;
   border-radius: 4px;
+
 }
